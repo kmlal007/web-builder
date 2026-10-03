@@ -2,6 +2,8 @@
 
 Status: **Draft for review.** Several open decisions (section 3) block implementation.
 
+> **Superseded for in-house use:** see [RECOMMENDED-APPROACH.md](RECOMMENDED-APPROACH.md). This SaaS plan applies only if the builder is sold as a product.
+
 ---
 
 ## 1. Problem statement
