@@ -1,0 +1,8 @@
+{
+  "id": "business-starter",
+  "name": "Business Starter",
+  "version": "1.0.0",
+  "description": "Clean multi-page site for local and professional services: home, about, contact.",
+  "verticals": ["professional-services", "clinic", "consulting", "local-business"],
+  "customizable": ["colors.primary", "colors.accent", "fonts.heading", "fonts.body", "radius", "density"]
+}

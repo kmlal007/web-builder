@@ -1,0 +1,19 @@
+{
+  "name": "{{packageName}}",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "site-kit check && astro build",
+    "preview": "astro preview",
+    "check": "site-kit check",
+    "check:launch": "site-kit check --launch"
+  },
+  "dependencies": {
+    "@astrojs/react": "^7.0.0",
+    "{{kitName}}": "{{kitSpec}}",
+    "astro": "^7.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}

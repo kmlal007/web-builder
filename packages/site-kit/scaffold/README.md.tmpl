@@ -1,0 +1,26 @@
+# {{customerName}} website
+
+Generated from template **{{templateId}} v{{templateVersion}}** with `{{kitName}}@{{kitVersion}}`.
+See `site.lock.json` for provenance.
+
+## Commands
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Local preview at http://localhost:4321 |
+| `npm run build` | Validate content and build static HTML into `dist/` |
+| `npm run check:launch` | Fails while any `[[CONFIRM: ...]]` placeholder remains |
+
+## Where things live
+
+| Path | Contents |
+|---|---|
+| `theme.json` | Colors, fonts, corner radius, spacing density |
+| `content/site.json` | Business name, navigation, footer |
+| `content/pages/*.json` | One file per page; each page is a list of sections |
+| `public/` | Images and other static files |
+| `src/custom/` | Customer-specific code (see its README) |
+
+## Deploy
+
+`dist/` is plain HTML/CSS. Deploy it to any static host (Netlify, Cloudflare Pages, Vercel, S3, nginx).

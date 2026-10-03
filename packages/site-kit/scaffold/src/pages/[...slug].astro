@@ -1,0 +1,16 @@
+---
+import SiteLayout from "{{kitName}}/astro/SiteLayout.astro";
+import { loadSite } from "{{kitName}}/content";
+
+export function getStaticPaths() {
+  const loaded = loadSite(process.cwd());
+  return loaded.pages.map((page) => ({
+    params: { slug: page.slug === "home" ? undefined : page.slug },
+    props: { loaded, page },
+  }));
+}
+
+const { loaded, page } = Astro.props;
+---
+
+<SiteLayout loaded={loaded} page={page} />

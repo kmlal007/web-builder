@@ -1,0 +1,30 @@
+{
+  "slug": "about",
+  "title": "About",
+  "description": "Who we are and how we work.",
+  "sections": [
+    {
+      "type": "hero",
+      "variant": "centered",
+      "heading": "About us",
+      "subheading": "A small team with a simple promise: do good work and be easy to work with."
+    },
+    {
+      "type": "text",
+      "heading": "Our story",
+      "paragraphs": [
+        "[[CONFIRM: founding story, in two or three sentences]]",
+        "Today we serve clients across [[CONFIRM: service area]]."
+      ]
+    },
+    {
+      "type": "features",
+      "variant": "list",
+      "heading": "How we work",
+      "items": [
+        { "title": "Clear scope", "body": "You know what you get and what it costs before we start." },
+        { "title": "One point of contact", "body": "No hand-offs between departments." }
+      ]
+    }
+  ]
+}

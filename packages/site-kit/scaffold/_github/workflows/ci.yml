@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Validates content, links and theme contrast, then builds static HTML into dist/.
+      - run: npm run build
+      # Unconfirmed facts ([[CONFIRM: ...]]) are reported here; they block launch, not development.
+      - run: npm run check:launch
+        continue-on-error: ${{ github.ref != 'refs/heads/main' }}

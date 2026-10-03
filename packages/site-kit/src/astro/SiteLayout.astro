@@ -1,0 +1,39 @@
+---
+import type { LoadedSite } from "../content/index.ts";
+import type { Page } from "../schema/index.ts";
+import { pagePath } from "../content/index.ts";
+import { themeToCss } from "../tokens/index.ts";
+import { PageView } from "../sections/index.tsx";
+import "../styles/base.css";
+
+interface Props {
+  loaded: LoadedSite;
+  page: Page;
+}
+
+const { loaded, page } = Astro.props;
+const { site, theme } = loaded;
+const title = page.slug === "home" ? site.name : `${page.title} | ${site.name}`;
+const description = page.description ?? site.tagline;
+const canonical = site.url ? new URL(pagePath(page.slug), site.url).href : undefined;
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content={theme.colors.primary} />
+    <style set:html={themeToCss(theme)}></style>
+    <slot name="head" />
+  </head>
+  <body>
+    <PageView site={site} page={page} />
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Your Business",
+  "tagline": "Trusted local experts since [[CONFIRM: founding year]]",
+  "lang": "en",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "links": [
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  }
+}

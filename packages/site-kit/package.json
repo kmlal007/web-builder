@@ -1,0 +1,53 @@
+{
+  "name": "@kmlal007/site-kit",
+  "version": "0.1.0",
+  "description": "Reusable sections, theming, content schema and CLI for template-based customer websites.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "bin": {
+    "site-kit": "./dist/cli.js"
+  },
+  "exports": {
+    "./schema": "./src/schema/index.ts",
+    "./tokens": "./src/tokens/index.ts",
+    "./sections": "./src/sections/index.tsx",
+    "./content": "./src/content/index.ts",
+    "./astro/SiteLayout.astro": "./src/astro/SiteLayout.astro",
+    "./styles/base.css": "./src/styles/base.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "templates",
+    "scaffold"
+  ],
+  "scripts": {
+    "build": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --target=node20 --packages=external --outfile=dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "peerDependencies": {
+    "astro": ">=5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.3.5",
+    "esbuild": "^0.28.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

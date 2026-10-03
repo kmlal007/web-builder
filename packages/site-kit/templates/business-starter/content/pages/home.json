@@ -1,0 +1,40 @@
+{
+  "slug": "home",
+  "title": "Home",
+  "description": "Professional services tailored to your needs.",
+  "sections": [
+    {
+      "type": "hero",
+      "variant": "centered",
+      "eyebrow": "Welcome",
+      "heading": "Professional service you can rely on",
+      "subheading": "We help clients in [[CONFIRM: service area]] get results with clear advice and honest pricing.",
+      "primaryCta": { "label": "Book a consultation", "href": "/contact" },
+      "secondaryCta": { "label": "About us", "href": "/about" }
+    },
+    {
+      "type": "features",
+      "variant": "grid",
+      "heading": "What we offer",
+      "intro": "Three ways we help our clients every day.",
+      "items": [
+        { "title": "Consultation", "body": "A focused first meeting to understand your goals and constraints." },
+        { "title": "Delivery", "body": "Experienced people doing the work, with progress you can see." },
+        { "title": "Support", "body": "We stay available after the job is done." }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "heading": "What clients say",
+      "items": [
+        { "quote": "[[CONFIRM: real client quote]]", "author": "[[CONFIRM: client name]]", "role": "Client" }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Ready to get started?",
+      "body": "Tell us what you need and we will get back to you within one business day.",
+      "action": { "label": "Contact us", "href": "/contact" }
+    }
+  ]
+}

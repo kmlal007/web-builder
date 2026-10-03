@@ -1,0 +1,19 @@
+{
+  "slug": "contact",
+  "title": "Contact",
+  "description": "Get in touch with us.",
+  "sections": [
+    {
+      "type": "contact",
+      "heading": "Contact us",
+      "intro": "Call, email or visit. We usually reply within one business day.",
+      "email": "hello@example.com",
+      "phone": "[[CONFIRM: phone number]]",
+      "address": ["[[CONFIRM: street address]]", "[[CONFIRM: city and postcode]]"],
+      "hours": [
+        { "days": "Mon–Fri", "time": "[[CONFIRM: weekday hours]]" },
+        { "days": "Sat–Sun", "time": "Closed" }
+      ]
+    }
+  ]
+}

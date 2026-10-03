@@ -1,0 +1,335 @@
+/* site-kit base styles. All brand values come from CSS variables emitted by themeToCss(). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+h1 {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  margin: 0 0 1em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: var(--color-primary);
+}
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.sk-container {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+.sk-container--narrow {
+  width: min(720px, 100% - 2rem);
+}
+.sk-section {
+  padding-block: var(--section-space);
+}
+.sk-section:nth-of-type(even) {
+  background: var(--color-surface);
+}
+.sk-lead {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 60ch;
+}
+.sk-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.sk-card {
+  background: var(--color-bg);
+  border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.sk-section:nth-of-type(odd) .sk-card {
+  background: var(--color-surface);
+}
+
+/* Buttons */
+.sk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.sk-btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+}
+.sk-btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.sk-btn--secondary {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* Skip link */
+.sk-skip {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--color-bg);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.sk-skip:focus {
+  left: 0.5rem;
+}
+
+/* Header */
+.sk-header {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  background: var(--color-bg);
+}
+.sk-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+}
+.sk-brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.sk-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+.sk-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.sk-nav a[aria-current="page"],
+.sk-nav a:hover {
+  color: var(--color-primary);
+}
+.sk-nav--mobile {
+  display: none;
+  position: relative;
+}
+.sk-nav--mobile summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+}
+.sk-nav--mobile summary::-webkit-details-marker {
+  display: none;
+}
+.sk-nav--mobile ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--color-bg);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+  min-width: 12rem;
+  z-index: 5;
+}
+@media (max-width: 760px) {
+  .sk-nav--desktop {
+    display: none;
+  }
+  .sk-nav--mobile {
+    display: block;
+  }
+}
+
+/* Hero */
+.sk-hero__inner {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+.sk-hero--centered .sk-hero__copy {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 48rem;
+}
+.sk-hero--centered .sk-lead {
+  margin-inline: auto;
+}
+.sk-hero--centered .sk-actions {
+  justify-content: center;
+}
+.sk-hero--split .sk-hero__inner {
+  grid-template-columns: 1.1fr 1fr;
+}
+.sk-hero__image {
+  border-radius: var(--radius);
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 760px) {
+  .sk-hero--split .sk-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Features */
+.sk-features__items {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1.25rem;
+}
+.sk-features__items--grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.sk-features__items p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* Testimonials */
+.sk-testimonials__items {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+.sk-testimonials figure {
+  margin: 0;
+}
+.sk-testimonials blockquote {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+.sk-testimonials figcaption span {
+  color: var(--color-muted);
+}
+
+/* CTA band */
+.sk-section.sk-cta {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.sk-cta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.sk-cta .sk-btn {
+  border-color: var(--color-on-primary);
+  color: var(--color-on-primary);
+}
+.sk-cta p {
+  margin: 0;
+}
+
+/* Contact */
+.sk-contact__grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 2rem;
+}
+.sk-contact address {
+  font-style: normal;
+}
+.sk-hours {
+  margin: 0;
+}
+.sk-hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.sk-hours dt {
+  white-space: nowrap;
+}
+.sk-hours dd {
+  margin: 0;
+  text-align: right;
+  color: var(--color-muted);
+}
+
+/* Footer */
+.sk-footer {
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  padding-block: 2rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+.sk-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.sk-footer p {
+  margin: 0;
+}
+.sk-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+.sk-footer a {
+  color: inherit;
+}

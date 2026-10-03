@@ -1,0 +1,16 @@
+{
+  "colors": {
+    "primary": "#1f5fbf",
+    "accent": "#f2a541",
+    "background": "#ffffff",
+    "surface": "#f4f6fa",
+    "text": "#1b2330",
+    "muted": "#4f5b6d"
+  },
+  "fonts": {
+    "heading": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+  },
+  "radius": "md",
+  "density": "comfortable"
+}
